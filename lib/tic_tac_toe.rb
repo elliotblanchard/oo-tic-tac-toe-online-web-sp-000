@@ -72,7 +72,7 @@ class TicTacToe
       display_board
     else turn
     end
-  end  
+  end
 
   def won?
     WIN_COMBINATIONS.any? do |win_state|
@@ -91,5 +91,5 @@ class TicTacToe
     end
     return return_value
   end
-    
+
 end
