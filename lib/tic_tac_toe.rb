@@ -92,4 +92,21 @@ class TicTacToe
     return return_value
   end
 
+  def draw?
+    if full? && !won?
+      return true
+    end
+  end
+  
+  def over?
+    if won? || draw? || full?
+      return true
+    end
+  end
+  
+  def winner
+    if won?
+      return @board[won?]
+    end
+  end
 end
