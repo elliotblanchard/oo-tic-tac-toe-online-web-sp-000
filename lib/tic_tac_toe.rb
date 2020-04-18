@@ -35,4 +35,22 @@ class TicTacToe
     !(@board[index].nil? || @board[index] == " ")
   end
 
+  #valid_move?
+  def valid_move?(index)
+    if ( index.between?(0,8) && position_taken?(@board,index) == false)
+      return true
+    end
+  end
+
+  #turn_count
+  def turn_count
+    counter = 0
+    @board.each do |index|
+      if !(index.nil? || index == " ")
+        counter += 1
+      end
+    end
+    return counter
+  end
+
 end
