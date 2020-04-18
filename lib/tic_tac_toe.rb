@@ -119,5 +119,5 @@ class TicTacToe
     else
         puts "Congratulations #{winner}!"
     end
-  end  
+  end
 end
