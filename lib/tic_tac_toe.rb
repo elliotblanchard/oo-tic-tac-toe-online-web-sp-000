@@ -37,7 +37,7 @@ class TicTacToe
 
   #valid_move?
   def valid_move?(index)
-    if ( index.between?(0,8) && position_taken?(@board,index) == false)
+    if ( index.between?(0,8) && position_taken?(index) == false)
       return true
     end
   end
@@ -52,5 +52,14 @@ class TicTacToe
     end
     return counter
   end
+
+  #current_player
+  def current_player
+    if turn_count % 2 == 0
+      return "X"
+    else
+      return "O"
+    end
+  end  
 
 end
