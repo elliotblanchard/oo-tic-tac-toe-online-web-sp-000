@@ -62,4 +62,34 @@ class TicTacToe
     end
   end
 
+  #turn
+  def turn
+    puts "Please enter 1-9:"
+    input = gets.strip
+    index = input_to_index(input)
+    if valid_move?(index)
+      move(index,current_player)
+      display_board
+    else turn
+    end
+  end  
+
+  def won?
+    WIN_COMBINATIONS.any? do |win_state|
+      if (win_state.all? {|index| position_taken?(index)}) && (win_state.all? {|index| @board[index] == "X"} || win_state.all? {|index| @board[index] == "O"})
+        return win_state
+      end
+    end
+  end
+
+  def full?
+    return_value = true
+    @board.each do |index|
+      if (index.nil? || index == " ")
+        return_value = false
+      end
+    end
+    return return_value
+  end
+    
 end
