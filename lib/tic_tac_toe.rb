@@ -97,13 +97,13 @@ class TicTacToe
       return true
     end
   end
-  
+
   def over?
     if won? || draw? || full?
       return true
     end
   end
-  
+
   def winner
     if won?
       return @board[won?]
